@@ -70,6 +70,12 @@ class Sanitize
           next
         end
 
+        if @config[:remove_empty] && @config[:remove_empty].include?(name) && node.children.empty?
+          node.unlink
+          next
+        end
+
+
         attr_whitelist = ((@config[:attributes][name] || []) +
             (@config[:attributes][:all] || [])).uniq
 

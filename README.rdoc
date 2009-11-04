@@ -146,6 +146,13 @@ include the symbol <code>:relative</code> in the protocol array:
   }
 
 
+==== :remove_empty
+
+Tags which you'd like removed should they be empty.
+  
+    :remove_empty => [ 'b', 'p' ]
+
+
 == Contributors
 
 The following lovely people have contributed to Sanitize in the form of patches

@@ -285,6 +285,13 @@ describe 'Sanitize.clean' do
   end
 end
 
+describe 'Removal of empty tags' do
+  should 'remove empty tags' do
+    input = '<b>Foo</b><p></p>'
+    Sanitize.clean(input, { :elements => ['b', 'p'], :remove_empty => ['b', 'p'] }).should.equal('<b>Foo</b>')
+  end
+end
+
 describe 'Sanitize.clean!' do
   should 'modify the input string' do
     input = '<b>foo</b>'
